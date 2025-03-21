@@ -1,3 +1,5 @@
+import ThemeSwitcher from "@/components/ThemeSwitcher";
+
 export default function Home() {
   const proyectos = [
     {
@@ -32,9 +34,9 @@ export default function Home() {
     },
   ];
   
-
   return (
     <div className="bg-white dark:bg-gray-800 text-black dark:text-white p-6 rounded-lg shadow">
+      <ThemeSwitcher /> {/* 👈 Agregamos el botón de tema */}
       <header className="bg-white dark:bg-gray-900 shadow p-6">
         <h1 className="text-4xl font-bold text-black dark:text-white">David Delgado Pallares</h1>
         <p className="text-lg mt-2 text-gray-600 dark:text-gray-300">
