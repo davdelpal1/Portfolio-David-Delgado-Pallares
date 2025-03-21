@@ -1,4 +1,4 @@
-"use client"; // 👈 Esto lo convierte en un Client Component
+"use client"; // 👈 Esto indica que es un Client Component
 
 import { useState, useEffect } from "react";
 

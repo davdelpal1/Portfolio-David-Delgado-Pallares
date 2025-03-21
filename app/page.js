@@ -1,4 +1,5 @@
-import ThemeSwitcher from "@/components/ThemeSwitcher";
+import ThemeSwitcher from "../components/ThemeSwitcher"; // ⬅️ IMPORTACIÓN CORRECTA
+
 
 export default function Home() {
   const proyectos = [
