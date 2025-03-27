@@ -7,6 +7,7 @@ export default function Home() {
       nombre: "Xtreme-Biking",
       descripcion: "Aplicación web de venta de bicicletas para la asignatura PGPI. Desarrollada con Django y HTML.",
       link: "https://github.com/goncammej/Xtreme-biking",
+      imagen: "/images/Xtreme_biking.jpg",
     },
     {
       nombre: "DeliverUs",
@@ -67,10 +68,17 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {proyectos.map((proyecto, index) => (
             <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-md transition">
-              <h3 className="text-xl font-bold text-black dark:text-white">{proyecto.nombre}</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-2">{proyecto.descripcion}</p>
-              <a href={proyecto.link} target="_blank" className="text-blue-500 dark:text-blue-300 hover:underline">Ver proyecto</a>
-            </div>
+            {proyecto.imagen && (
+              <img
+                src={proyecto.imagen}
+                alt={`Imagen de ${proyecto.nombre}`}
+                className="w-full h-48 object-cover rounded mb-4"
+              />
+            )}
+            <h3 className="text-xl font-bold text-black dark:text-white">{proyecto.nombre}</h3>
+            <p className="text-gray-700 dark:text-gray-300 mb-2">{proyecto.descripcion}</p>
+            <a href={proyecto.link} target="_blank" className="text-blue-500 dark:text-blue-300 hover:underline">Ver proyecto</a>
+          </div>          
           ))}
         </div>
       </main>
