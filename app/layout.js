@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navbar from "../components/Navbar";
 
 export const metadata = {
   title: "Mi Portfolio",
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors">
+        <Navbar /> {/* 👈 Navbar insertado aquí */}
+        {children}
+      </body>
     </html>
   );
 }

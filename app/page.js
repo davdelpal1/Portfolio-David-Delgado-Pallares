@@ -37,51 +37,52 @@ export default function Home() {
   ];
   
   return (
-    <div className="bg-white dark:bg-gray-800 text-black dark:text-white p-6 rounded-lg shadow">
-      <ThemeSwitcher /> {/* 👈 Agregamos el botón de tema */}
-      <header className="bg-white dark:bg-gray-900 shadow p-6">
-        <h1 className="text-4xl font-bold text-black dark:text-white">David Delgado Pallares</h1>
-        <p className="text-lg mt-2 text-gray-600 dark:text-gray-300">
-          Estudiante de 4º de Ingeniería Informática del Software en la Universidad de Sevilla.
-          Me apasionan las tecnologías desde que era pequeño y siempre ha sido mi sueño convertir mi pasión en mi profesión.
-        </p>
-        <p className="text-lg mt-2 text-gray-600 dark:text-gray-300">
-          Durante mis estudios, he adquirido experiencia en lenguajes de programación como Python, Java y C++, así como 
-          en el desarrollo de aplicaciones web utilizando frameworks como React y Node.js.
-        </p>
-        <p className="text-lg mt-2 text-gray-600 dark:text-gray-300">
-          Actualmente, estoy especialmente motivado por finalizar mis estudios, encontrar oportunidades para seguir creciendo
-          como desarrollador y aplicar mis conocimientos en proyectos reales.
-        </p>
-        <p className="text-lg mt-2 text-gray-600 dark:text-gray-300">
-          Si quieres saber más sobre mí o sobre mis proyectos, no dudes en contactar conmigo.
-        </p>
-        <div className="mt-4 flex gap-4">
-          <a href="https://github.com/davdelpal1" className="text-blue-600 dark:text-blue-400 hover:underline">GitHub</a>
-          <a href="https://www.linkedin.com/in/david-delgado-pallares-35b36b173/" className="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a>
-          <a href="mailto:delgado.pallares.david@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">Contacto</a>
-        </div>
-      </header>
-
       <main className="p-8">
-        <h2 className="text-3xl font-semibold mb-6 text-black dark:text-white">Proyectos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {proyectos.map((proyecto, index) => (
-            <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-md transition">
-            {proyecto.imagen && (
-              <img
-                src={proyecto.imagen}
-                alt={`Imagen de ${proyecto.nombre}`}
-                className="w-full h-48 object-cover rounded mb-4"
-              />
-            )}
-            <h3 className="text-xl font-bold text-black dark:text-white">{proyecto.nombre}</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-2">{proyecto.descripcion}</p>
-            <a href={proyecto.link} target="_blank" className="text-blue-500 dark:text-blue-300 hover:underline">Ver proyecto</a>
-          </div>          
-          ))}
-        </div>
+        <section id="about" className="mb-16">
+          <header className="bg-white dark:bg-gray-900 shadow p-6">
+            <h1 className="text-4xl font-bold text-black dark:text-white">David Delgado Pallares</h1>
+            <p className="text-lg mt-2 text-gray-600 dark:text-gray-300">
+              Estudiante de 4º de Ingeniería Informática del Software en la Universidad de Sevilla.
+              Me apasionan las tecnologías desde que era pequeño y siempre ha sido mi sueño convertir mi pasión en mi profesión.
+            </p>
+            <p className="text-lg mt-2 text-gray-600 dark:text-gray-300">
+              Durante mis estudios, he adquirido experiencia en lenguajes de programación como Python, Java y C++, así como 
+              en el desarrollo de aplicaciones web utilizando frameworks como React y Node.js.
+            </p>
+            <p className="text-lg mt-2 text-gray-600 dark:text-gray-300">
+              Actualmente, estoy especialmente motivado por finalizar mis estudios, encontrar oportunidades para seguir creciendo
+              como desarrollador y aplicar mis conocimientos en proyectos reales.
+            </p>
+            <p className="text-lg mt-2 text-gray-600 dark:text-gray-300">
+              Si quieres saber más sobre mí o sobre mis proyectos, no dudes en contactar conmigo.
+            </p>
+            <div className="mt-4 flex gap-4">
+              <a href="https://github.com/davdelpal1" className="text-blue-600 dark:text-blue-400 hover:underline">GitHub</a>
+              <a href="https://www.linkedin.com/in/david-delgado-pallares-35b36b173/" className="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a>
+              <a href="mailto:delgado.pallares.david@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">Contacto</a>
+            </div>
+          </header>
+        </section>
+
+        <section id="projects">
+          <h2 className="text-3xl font-semibold mb-6 text-black dark:text-white">Proyectos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {proyectos.map((proyecto, index) => (
+              <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow hover:shadow-md transition">
+                {proyecto.imagen && (
+                  <img
+                    src={proyecto.imagen}
+                    alt={`Imagen de ${proyecto.nombre}`}
+                    className="w-full h-48 object-cover rounded mb-4"
+                  />
+                )}
+                <h3 className="text-xl font-bold text-black dark:text-white">{proyecto.nombre}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-2">{proyecto.descripcion}</p>
+                <a href={proyecto.link} target="_blank" className="text-blue-500 dark:text-blue-300 hover:underline">Ver proyecto</a>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
-    </div>
   );
 }
